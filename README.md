@@ -9,11 +9,14 @@ _A disassembler, lifter and basic loader for the Intel MCS-48 architecture._
 
 The MCS-48 architecture plugin has the following known issues:
 
-* 
+* calling conventions and platform are not working properly
+* register and memory bank switching uses bad workarounds
+* some instructions not implemented (movx, port I/O)
 
 The binary view has the following known issues:
 
-* 
+* no distinct signature for MCS-48 binaries
+* no handling for external memory
 
 ## Installation
 
@@ -25,7 +28,7 @@ To install this plugin, navigate to your Binary Ninja plugins directory, and run
 
 This plugin requires the following minimum version of Binary Ninja:
 
- * 1.1.1150
+ * 1.1.1221
 
 ## License
 

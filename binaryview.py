@@ -1,4 +1,3 @@
-import struct
 import traceback
 
 from binaryninja.platform import Platform
@@ -13,10 +12,10 @@ class Native(BinaryView):
     CODE_OFFSET = 0x8000
 
     def __init__(self, data):
-        BinaryView.__init__(self, parent_view = data, file_metadata = data.file)
+        BinaryView.__init__(self, parent_view=data, file_metadata=data.file)
 
     @classmethod
-    def is_valid_for_data(self, data):
+    def is_valid_for_data(cls, data):
         return True
 
     def init(self):
@@ -50,11 +49,14 @@ class Native(BinaryView):
             return True
 
         except:
-			log_error(traceback.format_exc())
-			return False
+            log_error(traceback.format_exc())
+            return False
+
+    def perform_get_address_size(self):
+        return 2
 
     def perform_is_executable(self):
-    	return True
+        return True
 
     def perform_get_entry_point(self):
         return self.CODE_OFFSET | 0

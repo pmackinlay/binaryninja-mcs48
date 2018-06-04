@@ -792,6 +792,7 @@ class MCS48_8022(MCS48_802X):
 class MCS48:
     # rom_size, ram_size, has_banks 
     devices = [
+        # TODO: following are disabled for now
         # [MCS48_8021, '8021', 1024, 64, False],
         # [MCS48_8022, '8022', 2048, 64, False],
         # [MCS48_804X, '8048', 1024, 64, True],
